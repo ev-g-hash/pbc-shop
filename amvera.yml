@@ -1,0 +1,22 @@
+# amvera.yml
+meta:
+  environment: python
+  toolchain:
+    name: pip
+    version: "3.11"
+build:
+  requirementsPath: requirements.txt
+  useCache: true
+env:
+  - name: DJANGO_SECRET_KEY
+    value: "your-secret-key-here"
+  - name: DJANGO_DEBUG
+    value: "False"
+  - name: DJANGO_ALLOWED_HOSTS
+    value: "localhost,127.0.0.1,pbc-shop-pihtulovevgeny.amvera.io"
+run:
+  command: |
+    python manage.py collectstatic --noinput &&
+    gunicorn shop.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 30
+  persistenceMount: /data
+  containerPort: "8000"
