@@ -1,10 +1,10 @@
-📦 Описание проекта: "Подарок в большом городе"
+# 📦 Описание проекта: "Подарок в большом городе"
 🎯 Общая информация
 Название: Подарок в большом городе
 Тип проекта: Интернет-магазин эксклюзивных изделий ручной работы
 Технологический стек: Python 3.11, Django 4.2, Bootstrap 5, SQLite, Gunicorn
 
-✨ Функциональные возможности
+# ✨ Функциональные возможности
 1. Главная страница (/)
     Приветственный баннер (Jumbotron)
     Кнопки быстрого перехода в каталог и на форму связи
@@ -39,70 +39,7 @@
     Автоматический редирект на главную через 3 секунды
     Telegram-уведомления о новых заявках
 
-pbc-shop/
-├── 📁 .dockerignore          # Исключения для Docker
-├── 📄 amvera.yml             # Конфигурация деплоя Amvera
-├── 📄 manage.py              # Django CLI
-├── 📄 requirements.txt       # Зависимости Python
-├── 📄 README.md              # Документация
-│
-├── 📁 shop/                  # Главное приложение Django
-│   ├── 📄 __init__.py
-│   ├── 📄 asgi.py            # ASGI конфигурация
-│   ├── 📄 settings.py        # Настройки проекта
-│   ├── 📄 urls.py            # Корневые маршруты
-│   ├── 📄 wsgi.py            # WSGI конфигурация
-│   │
-│   └── 📁 main_shop/         # Приложение страниц
-│       ├── 📄 admin.py       # Админка (пустая)
-│       ├── 📄 apps.py
-│       ├── 📄 forms.py       # ContactForm
-│       ├── 📄 models.py      # Модели (пустые)
-│       ├── 📄 urls.py        # Маршруты main_shop
-│       ├── 📄 views.py       # Представления страниц
-│       │
-│       └── 📁 templates/main_shop/
-│           ├── 📄 index.html
-│           ├── 📄 aboutas.html
-│           ├── 📄 readmore.html
-│           ├── 📄 forms.html
-│           └── 📄 success.html
-│
-├── 📁 goods/                 # Приложение каталога
-│   ├── 📄 admin.py           # Админка Categories, Products
-│   ├── 📄 apps.py
-│   ├── 📄 forms.py           # ProductOrderForm
-│   ├── 📄 models.py          # Categories, Products
-│   ├── 📄 urls.py            # Маршруты каталога
-│   ├── 📄 views.py           # Представления каталога
-│   │
-│   └── 📁 templates/goods/
-│       ├── 📄 catalog.html
-│       └── 📄 product.html
-│
-├── 📁 templates/             # Общие шаблоны
-│   └── 📄 base.html          # Базовый шаблон
-│
-├── 📁 static/                # Статические файлы разработки
-│   ├── 📁 css/
-│   │   └── 📄 style.css      # Основные стили
-│   │
-│   └── 📁 js/
-│       └── 📄 script_forms.js # AJAX-обработка форм
-│
-├── 📁 staticfiles/           # Скомпилированная статика
-│   ├── 📁 css/
-│   └── 📁 js/
-│
-├── 📁 media/                 # Медиа-файлы (изображения товаров)
-│   └── 📁 products/
-│
-├── 📁 data/                  # Данные приложения
-│   └── 📄 db.sqlite3         # База данных SQLite
-│
-└── 📁 env/                   # Виртуальное окружение (опционально)
-
-🎨 Особенности дизайна
+# 🎨 Особенности дизайна
 Стилизация
 Цветовая схема: Фиолетовый градиент (#667eea → #764ba2)
 Шрифт: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
@@ -110,7 +47,7 @@ pbc-shop/
 Sticky Footer: Фиксированная навигация внизу экрана
 Bootstrap Icons: Иконки в интерфейсе
 
-Компоненты Bootstrap
+# Компоненты Bootstrap
 Navigation Bar (navbar)
 Cards (карточки товаров)
 Forms (формы ввода)
@@ -119,49 +56,32 @@ Pagination (пагинация)
 Breadcrumb (хлебные крошки)
 Buttons (кнопки с градиентом)
 
-Локальный запуск (Development)
-# 1. Клонирование репозитория
-git clone <репозиторий>
-cd pbc-shop
-
-# 2. Создание виртуального окружения
-python -m venv env
-source env/bin/activate  # Linux/Mac
-# или
-env\Scripts\activate     # Windows
-
-# 3. Установка зависимостей
+# Локальный запуск (Development)
+Установка зависимостей
 pip install -r requirements.txt
-
-# 4. Применение миграций
+Применение миграций
 python manage.py migrate
-
-# 5. Сбор статики
-python manage.py collectstatic --noinput
-
-# 6. Запуск сервера
+Запуск сервера
 python manage.py runserver
 
-Деплой на Amvera
-# 1. Создание приложения в Amvera
+# Деплой на Amvera
+Создание приложения в Amvera
 amvera create
-
-# 2. Настройка переменных окружения в amvera.yml
-# Добавить:
-# TELEGRAM_BOT_TOKEN=your-bot-token
-# TELEGRAM_CHAT_ID=your-chat-id
-
-# 3. Деплой
+Настройка переменных окружения в amvera.yml
+Добавить:
+TELEGRAM_BOT_TOKEN=your-bot-token
+TELEGRAM_CHAT_ID=your-chat-id
+Деплой
 amvera push
 
-🔐 Безопасность
+# 🔐 Безопасность
 CSRF Protection — защита от межсайтовой подделки запросов
 XSS Protection — фильтрация вредоносного кода
 SQL Injection Protection — ORM Django защищает от инъекций
 Password Validation — валидация паролей пользователей
 Secure Headers — настройки безопасных заголовков
 
-📈 Планы по развитию
+# 📈 Планы по развитию
 [ ] Добавление корзины покупок
 [ ] Система регистрации пользователей
 [ ] Оплата онлайн (ЮKassa, Robokassa)
@@ -170,7 +90,7 @@ Secure Headers — настройки безопасных заголовков
 [ ] Email-уведомления
 [ ] SEO-оптимизация
 
-👨‍💻 Автор
+# 👨‍💻 Автор
 PBC (Подарок в большом городе)
 Магазин эксклюзивных изделий ручной работы
 Пихтулов Евгений А.
